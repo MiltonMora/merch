@@ -1,6 +1,9 @@
-import React from 'react'
+import React from 'react';
+
+import Routes from '../routes/App';
+
 import '../styles/components/app.css';
 
-const App = () => <h1>Hola Gato</h1>
+const App = () => Routes;
 
 export default App;
