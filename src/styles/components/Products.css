@@ -1,7 +1,7 @@
 .Products-items {
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.5rem;
-  grid-row-gap: 1.5em;
+  grid-gap: 0.5rem;
+  grid-row-gap: 0.5em;
   display: grid;
 }
 .Products-item {

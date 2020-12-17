@@ -3,7 +3,24 @@ import React from 'react';
 import '../styles/components/Checkout.css';
 
 const Checkout = () => {
-  return <h1>Checkout</h1>;
+  return (
+    <div className="Checkout">
+      <div className="Checkout-content">
+        <h3>Lista</h3>
+        <div className="Checkout-item">
+          <div className="Checkout-element">
+            <h4>Item Name</h4>
+            <span>$ gatos</span>
+          </div>
+          <button type="button">Eliminar</button>
+        </div>
+      </div>
+      <div className="Checkout-sidebar">
+        <h3>Precio total $10</h3>
+        <button type="button">Continuar</button>
+      </div>
+    </div>
+  );
 };
 
 export default Checkout;
