@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import AppContext from '../context/AppContext';
 
@@ -19,29 +20,34 @@ const Checkout = () => {
   }
 
   return (
-    <div className="Checkout">
-      <div className="Checkout-content">
-        <h3>Lista</h3>
-        {cart.length > 0 &&
-          cart.map((el) => (
-            <div className="Checkout-item" key={cart.indexOf(el)}>
-              <div className="Checkout-element">
-                  <h4>{el.title}</h4>
-                  <span>$ {el.price}</span>
+    <>
+      <Helmet>
+        <title>Lista de pedidos</title>
+      </Helmet>
+      <div className="Checkout">
+        <div className="Checkout-content">
+          <h3>Lista</h3>
+          {cart.length > 0 &&
+            cart.map((el) => (
+              <div className="Checkout-item" key={cart.indexOf(el)}>
+                <div className="Checkout-element">
+                    <h4>{el.title}</h4>
+                    <span>$ {el.price}</span>
+                </div>
+                <button type="button" onClick={handleRemoveCar(el)}>Eliminar</button>
               </div>
-              <button type="button" onClick={handleRemoveCar(el)}>Eliminar</button>
-            </div>
-        ))}
-      </div>
-      {cart.length > 0 && (
-        <div className="Checkout-sidebar">
-          <h3>{`Precio total $ ${handleSumTotal()}`}</h3>
-          <Link to="/checkout/information">
-            <button type="button">Continuar</button>
-          </Link>
+          ))}
         </div>
-      )}
-    </div>
+        {cart.length > 0 && (
+          <div className="Checkout-sidebar">
+            <h3>{`Precio total $ ${handleSumTotal()}`}</h3>
+            <Link to="/checkout/information">
+              <button type="button">Continuar</button>
+            </Link>
+          </div>
+        )}
+      </div>
+    </>  
   );
 };
 
